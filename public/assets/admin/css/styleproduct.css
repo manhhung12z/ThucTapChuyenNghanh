@@ -1,0 +1,275 @@
+
+/* Card & Shadow mượt mà phong cách Premium */
+        .privia-card {
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.01);
+            border: 1px solid #eaeaea !important;
+        }
+
+        /* Nút Thêm mới  */
+        .btn-blue-privia {
+            background: #2563eb;
+            color: #ffffff !important;
+            border: 1px solid #2563eb;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: -0.01em;
+            transition: all 0.2s ease;
+        }
+        .btn-blue-privia:hover {
+            background: #1d4ed8;
+            border-color: #1d4ed8;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+        }
+        .btn-green-privia {
+            background: #16c000;
+            color: #ffffff !important;
+            border: 1px solid #82d820;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: -0.01em;
+            transition: all 0.2s ease;
+        }
+        .btn-green-privia:hover {
+            background: #50e72b;
+            border-color: #50e72b;
+            box-shadow: 0 4px 12px rgba(80, 231, 43, 0.15);
+        }
+        /* Thanh tìm kiếm tinh tế */
+        .search-privia {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 0.875rem;
+            color: #1f2937;
+            background-color: #ffffff;
+            transition: all 0.15s ease;
+        }
+        .search-privia::placeholder { 
+            color: #9ca3af; 
+            font-size: 0.875rem; 
+        }
+        .search-privia:focus { 
+            border-color: #3b82f6; 
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); 
+        }
+
+        /* Định hình cấu trúc Bảng */
+        .table-privia {
+            table-layout: fixed; 
+            width: 100%;
+        }
+        .table-privia thead th {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #6b7280 !important;
+            letter-spacing: 0.06em;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f3f4f6 !important;
+            background-color: #f9fafb;
+        }
+        .table-privia tbody tr { 
+            border-bottom: 1px solid #f3f4f6; 
+            transition: background-color 0.15s ease; 
+        }
+        .table-privia tbody tr:hover { 
+            background-color: #f9fafb; 
+        }
+        .table-privia tbody td { 
+            padding-top: 16px; 
+            padding-bottom: 16px; 
+            font-size: 0.875rem; 
+        }
+
+        /* Hệ thống nút bấm hành động */
+        .btn-action-privia { 
+            font-size: 0.75rem; 
+            padding: 4px 12px; 
+            border-radius: 6px; 
+            font-weight: 500; 
+            transition: all 0.15s ease; 
+            background: #ffffff; 
+        }
+        .btn-edit-privia { 
+            color: #2563eb; 
+            border: 1px solid #dbeafe; 
+        }
+        .btn-edit-privia:hover { 
+            background: #2563eb; 
+            color: #ffffff; 
+            border-color: #2563eb; 
+        }
+        .btn-delete-privia { 
+            color: #ef4444; 
+            border: 1px solid #fee2e2; 
+        }
+        .btn-delete-privia:hover { 
+            background: #ef4444; 
+            color: #ffffff; 
+            border-color: #ef4444; 
+        }
+
+        /* Giới hạn text chống vỡ khung */
+        .text-truncate-custom {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        @media (min-width: 576px) {
+            #searchProduct {
+                max-width: 240px !important;
+            }
+        }
+
+/* ----------------------------------------------------MODAL------------------------------------------*/
+  /* Nền phủ mờ mịn màng đẳng cấp */
+    .custom-modal-backdrop {
+        background: rgba(17, 24, 39, 0.4);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        z-index: 1060;
+    }
+    
+    /* Trạng thái ẩn tương thích JS hệ thống */
+    .custom-modal-backdrop.hidden, #previewContainer.hidden {
+        display: none !important;
+        opacity: 0;
+    }
+    
+    /* Hiệu ứng scale box mượt nhẹ */
+    .custom-modal-box {
+        transform: scale(0.97);
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        border: 1px solid #eaeaea !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+    }
+    .custom-modal-backdrop:not(.hidden) .custom-modal-box {
+        transform: scale(1);
+    }
+
+    /* Nút đóng chéo tối giản */
+    .btn-close-luxury {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        color: #4b5563;
+        transition: all 0.15s ease;
+    }
+    .btn-close-luxury:hover {
+        background: #f9fafb;
+        color: #000000;
+        border-color: #9ca3af;
+    }
+
+    /* Ô nhập liệu phong cách Platinum tinh khiết */
+    .input-product {
+        border: 1px solid #e5e7eb;
+        color: #111827;
+        font-size: 0.9rem;
+        background-color: #ffffff;
+        transition: all 0.2s ease;
+    }
+    /* Focus Ring màu Xanh Dương Sapphire nhẹ */
+    .input-product:focus {
+        border-color: #2563eb;
+        background-color: #ffffff;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+    }
+    .input-product::placeholder {
+        color: #9ca3af;
+        font-size: 0.875rem;
+    }
+
+    /* Nút Hủy (Trắng / Viền nhạt) */
+    .btn-cancel-luxury {
+        background: #ffffff;
+        color: #4b5563;
+        border: 1px solid #e5e7eb;
+        font-size: 0.875rem;
+        transition: all 0.15s ease;
+    }
+    .btn-cancel-luxury:hover {
+        background: #f9fafb;
+        color: #000000;
+        border-color: #9ca3af;
+    }
+
+    /* Nút Lưu (Xanh Dương Royal / Sapphire) */
+    .btn-submit-blue {
+        background: #2563eb !important;
+        color: #ffffff !important;
+        border: 1px solid #2563eb !important;
+        font-size: 0.875rem;
+        letter-spacing: -0.01em;
+        transition: all 0.2s ease;
+    }
+    .btn-submit-blue:hover {
+        background: #1d4ed8 !important;
+        border-color: #1d4ed8 !important;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+    }
+
+    /* Tùy chỉnh thanh cuộn siêu mỏng sang trọng */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #e5e7eb;
+        border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #cbd5e1;
+    }
+
+    /* Tiện ích Class */
+    .py-2-5 {
+        padding-top: 0.625rem;
+        padding-bottom: 0.625rem;
+    }
+    .tracking-wider {
+        letter-spacing: 0.05em;
+    }
+    .cursor-pointer {
+        cursor: pointer;
+    }
+        /* CKEDITOR */
+/* --- PHÂN KHU CKEDITOR 5 LUXURY --- */
+
+/* Khung bọc & Thanh công cụ */
+.khoi-boc-ckeditor {
+    border: 1px solid #e5e7eb !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+    transition: all 0.2s ease; 
+}
+.khoi-boc-ckeditor .ck.ck-toolbar {
+    border: none !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    background-color: #f9fafb !important;
+    border-radius: 0 !important;
+}
+.khoi-boc-ckeditor:has(.ck-editor__editable_inline.ck-focused) {
+    border-color: #1d4ed8 !important;
+}
+
+/* Vùng nhập liệu (Ép độ cao & Khử viền khi focus) */
+.khoi-boc-ckeditor .ck-editor__editable_inline {
+    min-height: 110px !important;
+    max-height: 140px !important;
+    overflow-y: auto !important;
+    border: none !important;
+    padding: 10px 14px !important;
+    font-size: 0.9rem !important;
+}

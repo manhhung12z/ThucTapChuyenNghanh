@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Không tìm thấy trang | Privia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f43f5e;
+            --bg: #0f172a;
+            --text: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Elements */
+        .blobs {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            filter: blur(80px);
+            opacity: 0.6;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            animation: move 20s infinite alternate;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary);
+            top: -100px;
+            left: -100px;
+        }
+
+        .blob-2 {
+            width: 350px;
+            height: 350px;
+            background: var(--secondary);
+            bottom: -50px;
+            right: -50px;
+            animation-delay: -5s;
+        }
+
+        @keyframes move {
+            from {
+                transform: translate(0, 0) scale(1);
+            }
+
+            to {
+                transform: translate(100px, 50px) scale(1.1);
+            }
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        .error-code {
+            font-size: 10rem;
+            font-weight: 800;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            position: relative;
+            animation: pulse 4s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 0px var(--primary));
+            }
+
+            50% {
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 20px var(--primary));
+            }
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 100px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4);
+        }
+
+        .btn-home:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -10px rgba(79, 70, 229, 0.6);
+        }
+
+        .astronaut {
+            position: absolute;
+            width: 150px;
+            top: 20%;
+            right: 15%;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.8;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(10deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 7rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .astronaut {
+                width: 100px;
+                top: 10%;
+                right: 10%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container">
+        <div class="error-code">404</div>
+        <h1>Úi! Trang này đã "bay màu"</h1>
+        <p>Có vẻ như đường dẫn bạn đang tìm kiếm không tồn tại hoặc đã được chuyển sang một thiên hà khác. Đừng lo, hãy
+            để chúng tôi đưa bạn trở về an toàn.</p>
+
+        <a href="<?php echo _WEB_ROOT; ?>" class="btn-home">
+            <i class="fas fa-home"></i> Trở về trang chủ
+        </a>
+    </div>
+
+    <i class="fas fa-user-astronaut astronaut" style="font-size: 8rem; color: var(--secondary)"></i>
+
+    <script>
+        // Subtle mouse follow effect
+        document.addEventListener('mousemove', (e) => {
+            const blobs = document.querySelectorAll('.blob');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            blobs.forEach((blob, index) => {
+                const speed = (index + 1) * 20;
+                blob.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+    </script>
+</body>
+
+</html>

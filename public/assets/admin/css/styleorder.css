@@ -1,0 +1,201 @@
+
+/* Card & Shadow mượt đồng bộ hệ thống Privia */
+        .privia-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: none !important;
+        }
+
+        /* Thanh tìm kiếm tinh tế */
+        .search-privia {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 8px 16px;
+            font-size: 0.875rem;
+            color: #4b5563;
+        }
+        .search-privia::placeholder {
+            color: #af9ca3;
+            font-size: 0.875rem;
+        }
+        .search-privia:focus {
+            border-color: #ff0000;
+            box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1);
+        }
+
+        /* Định hình lại cấu trúc Bảng */
+        .table-privia thead th {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #9ca3af !important;
+            letter-spacing: 0.05em;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f3f4f6 !important;
+        }
+        .table-privia tbody tr {
+            border-bottom: 1px solid #f9fafb;
+            transition: background-color 0.2s ease;
+        }
+        .table-privia tbody tr:hover {
+            background-color: #fafafa;
+        }
+        .table-privia tbody td {
+            padding-top: 18px;
+            padding-bottom: 18px;
+            font-size: 0.875rem;
+        }
+        /* Nút Xử lý  */
+            .btn-action-privia {
+                font-size: 0.75rem;
+                padding: 4px 12px;
+                border-radius: 8px;
+                font-weight: 500;
+                transition: all 0.15s ease;
+                background: #ffffff;
+                white-space: nowrap; /* Giữ nút không bị xuống dòng*/
+            }
+
+            .btn-process-privia {
+                color: #f43f5e;             
+                border: 1px solid #ffe4e6;  
+            }
+
+            .btn-process-privia:hover {
+                background: #f43f5e;         
+                color: #ffffff !important;   
+                border-color: #f43f5e;      
+                box-shadow: 0 4px 12px rgba(244, 63, 94, 0.15); 
+            }
+
+        /* Giới hạn độ dài text tránh vỡ khung */
+        .truncate-customer {
+            max-width: 160px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Custom scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e5e7eb;
+            border-radius: 4px;
+        }
+        
+        @media (min-width: 576px) {
+            #searchOrder {
+                max-width: 240px !important;
+            }
+        }   
+
+/* ----------------------------------------------------MODAL------------------------------------------*/
+   /* lớp nền mờ  */
+    .custom-modal-backdrop {
+        background: rgba(15, 23, 42, 0.4);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        z-index: 1060;
+    }
+    
+    /* Trạng thái ẩn mặc định */
+    .custom-modal-backdrop.hidden {
+        display: none !important;
+        opacity: 0;
+    }
+    
+    /* Hiệu ứng zoom */
+    .custom-modal-box {
+        transform: scale(0.96);
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        border: 1px solid #eaeaea !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+    }
+    .custom-modal-backdrop:not(.hidden) .custom-modal-box {
+        transform: scale(1);
+    }
+
+    /* Tiêu đề  */
+    .gradient-text-rose {
+        background: linear-gradient(to right, #e11d48, #fda4af);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* Nút đóng */
+    .btn-close-luxury {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        color: #4b5563;
+        transition: all 0.15s ease;
+    }
+    .btn-close-luxury:hover {
+        background: #f9fafb;
+        color: #000000;
+        border-color: #9ca3af;
+    }
+
+    /* Ô Nhập Liệu */
+    .input-privia {
+        border: 1px solid #e5e7eb;
+        color: #111827;
+        font-size: 0.9rem;
+        background-color: #ffffff;
+        transition: all 0.2s ease;
+    }
+    /* Hiệu ứng Focus */
+    .input-privia:focus {
+        border-color: #f43f5e;
+        background-color: #ffffff;
+        box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.08);
+    }
+
+    .btn-cancel-luxury {
+        background: #ffffff;
+        color: #4b5563;
+        border: 1px solid #e5e7eb;
+        font-size: 0.875rem;
+        transition: all 0.15s ease;
+    }
+    .btn-cancel-luxury:hover {
+        background: #f9fafb;
+        color: #000000;
+        border-color: #9ca3af;
+    }
+
+    .btn-submit-rose {
+        background: #f43f5e !important;
+        color: #ffffff !important;
+        border: 1px solid #f43f5e !important;
+        font-size: 0.875rem;
+        letter-spacing: -0.01em;
+        transition: all 0.2s ease;
+    }
+    .btn-submit-rose:hover {
+        background: #e11d48 !important;
+        border-color: #e11d48 !important;
+        box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2);
+    }
+    
+    /* Custom độ cao padding input/select đồng đều */
+    .py-2-5 {
+        padding-top: 0.625rem;
+        padding-bottom: 0.625rem;
+    }
+    
+    /* Tùy chỉnh riêng cho thẻ select trỏ xuống */
+    .style-select-privia {
+        cursor: pointer;
+        background-size: 12px 12px;
+    }
+    .tracking-wider {
+        letter-spacing: 0.05em;
+    }

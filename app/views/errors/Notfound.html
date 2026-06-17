@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Không tìm thấy trang | Privia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+    :root {
+        --primary: #4f46e5;
+        --secondary: #06b6d4;
+        --accent: #f43f5e;
+        --bg: #0f172a;
+        --text: #f8fafc;
+    }
+    body {
+        background-color: var(--bg);
+        font-family: 'Outfit', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:100vh;
+        position: relative;
+    }
+    .blobs{
+        position:absolute;
+        width:100%;
+        height:100%;
+        z-index:-1;
+        filter: blur(80px);
+        opacity:0.6;
+    }
+    .blob {
+            position: absolute;
+            border-radius: 50%;
+            animation: move 20s infinite alternate;
+        }
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary);
+            top: -100px;
+            left: -100px;
+        }
+
+        .blob-2 {
+            width: 350px;
+            height: 350px;
+            background: var(--secondary);
+            bottom: -50px;
+            right: -50px;
+            animation-delay: -5s;
+        }
+
+</style>
+
+<body>
+    <div class="blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    <div class="container">
+        <div class="error-code">404</div>
+        <h1>Uí! Trang này đã bị "bay màu"</h1>
+        <p>Có vẻ như đường dẫn bạn đang tìm kiếm không tồn tại hoặc đã được chuyển sang một thiên hà khác. Đừng lo, hãy
+            để chúng tôi đưa bạn trở về an toàn.</p>
+        <a href="<?php echo _WEB_ROOT; ?>" class="btn-home">
+            <i class="fas fa-home"></i> Trở về trang chủ
+        </a>
+    </div>
+    <i class="fas fa-user-astronaut astronaut" style="font-size: 8rem; color: var(--secondary)"></i>
+
+</body>
+
+</html>

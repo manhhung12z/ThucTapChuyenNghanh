@@ -1,0 +1,200 @@
+
+/* Card & Shadow mượt mà phong cách Luxury */
+        .privia-card {
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.01);
+            border: 1px solid #eaeaea !important;
+        }
+
+        /* Nút Thêm mới phong cách Quý Tộc (Đen Tuyển / Trắng Tinh Khiết) */
+        .btn-luxury-privia {
+            background: #111827;
+            color: #ffffff !important;
+            border: 1px solid #111827;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: -0.01em;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-luxury-privia:hover {
+            background: #1f2937;
+            border-color: #1f2937;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Thanh tìm kiếm tinh tế phong cách tối giản */
+        .search-privia {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 0.875rem;
+            color: #1f2937;
+            background-color: #ffffff;
+            transition: all 0.15s ease;
+        }
+        .search-privia::placeholder {
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+        .search-privia:focus {
+            border-color: #111827;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.05);
+        }
+
+        /* Cấu trúc Bảng Luxury */
+        .table-privia thead th {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #6b7280 !important;
+            letter-spacing: 0.06em;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f3f4f6 !important;
+            background-color: #f9fafb;
+        }
+        .table-privia tbody tr {
+            border-bottom: 1px solid #f3f4f6;
+            transition: background-color 0.15s ease;
+        }
+        .table-privia tbody tr:hover {
+            background-color: #f9fafb;
+        }
+        .table-privia tbody td {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            font-size: 0.875rem;
+        }
+
+        /* Nút Sửa / Xóa mảnh dẻ cao cấp */
+        .btn-action-privia {
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.15s ease;
+            background: #ffffff;
+        }
+        .btn-edit-privia {
+            color: #374151;
+            border: 1px solid #e5e7eb;
+        }
+        .btn-edit-privia:hover {
+            background: #f3f4f6;
+            color: #000000;
+            border-color: #9ca3af;
+        }
+        .btn-delete-privia {
+            color: #dc2626;
+            border: 1px solid #fee2e2;
+        }
+        .btn-delete-privia:hover {
+            background: #fff5f5;
+            color: #b91c1c;
+            border-color: #fca5a5;
+        }
+
+        /* Giới hạn độ dài mô tả */
+        .desc-col {
+            max-width: 350px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #4b5563;
+        }
+                
+        @media (min-width: 576px) {
+            #searchCategory {
+                max-width: 240px !important;
+            }
+        }
+/* ----------------------------------------------------MODAL------------------------------------------*/
+  /* Lớp phủ mờ phong cách Dark-Blur cao cấp */
+    .custom-modal-backdrop {
+        background: rgba(15, 23, 42, 0.4);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        z-index: 1060;
+    }
+    
+    .custom-modal-backdrop.hidden {
+        display: none !important;
+        opacity: 0;
+    }
+    
+    /* Cấu trúc Box trắng đổ bóng sâu thanh lịch */
+    .custom-modal-box {
+        transform: scale(0.96);
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        border: 1px solid #eaeaea !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+    }
+    .custom-modal-backdrop:not(.hidden) .custom-modal-box {
+        transform: scale(1);
+    }
+
+    /* Nút đóng góc phải */
+    .btn-close-luxury {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        color: #4b5563;
+        transition: all 0.15s ease;
+    }
+    .btn-close-luxury:hover {
+        background: #f9fafb;
+        color: #000000;
+        border-color: #9ca3af;
+    }
+
+    /* Ô nhập liệu với Focus màu Đen */
+    .input-privia {
+        border: 1px solid #e5e7eb;
+        color: #111827;
+        font-size: 0.9rem;
+        background-color: #ffffff;
+        transition: all 0.2s ease;
+    }
+    .input-privia:focus {
+        border-color: #111827;
+        background-color: #ffffff;
+        box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.05);
+    }
+    .input-privia::placeholder {
+        color: #9ca3af;
+        font-size: 0.875rem;
+    }
+
+    /* Nút hủy  */
+    .btn-cancel-luxury {
+        background: #ffffff;
+        color: #4b5563;
+        border: 1px solid #e5e7eb;
+        font-size: 0.875rem;
+        transition: all 0.15s ease;
+    }
+    .btn-cancel-luxury:hover {
+        background: #f9fafb;
+        color: #000000;
+        border-color: #9ca3af;
+    }
+
+    /* Nút Submit */
+    .btn-submit-luxury {
+        background: #111827 !important;
+        color: #ffffff !important;
+        border: 1px solid #111827 !important;
+        font-size: 0.875rem;
+        letter-spacing: -0.01em;
+        transition: all 0.2s ease;
+    }
+    .btn-submit-luxury:hover {
+        background: #1f2937 !important;
+        border-color: #1f2937 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+  

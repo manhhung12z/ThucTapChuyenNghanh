@@ -1,0 +1,191 @@
+
+
+       /* Card & Shadow mượt đồng bộ hệ thống */
+        .privia-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: none !important;
+        }
+
+        /* Button Thêm mới chuẩn Gradient màu Hồng ngọt ngào */
+        .btn-gradient-privia {
+            background: linear-gradient(135deg, #f472b6 0%, #db2777 100%);
+            color: #ffffff !important;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 0.925rem;
+            transition: all 0.2s ease;
+        }
+        .btn-gradient-privia:hover {
+            opacity: 0.95;
+            box-shadow: 0 4px 12px rgba(244, 114, 182, 0.3);
+        }
+
+        /* Thanh tìm kiếm tinh tế chuẩn tone Hồng */
+        .search-privia {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 8px 16px;
+            font-size: 0.875rem;
+            color: #4b5563;
+        }
+        .search-privia::placeholder {
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+        .search-privia:focus {
+            border-color: #f472b6;
+            box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.15);
+        }
+
+        /* Định hình cấu trúc Bảng Tin tức */
+        .table-privia thead th {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #9ca3af !important;
+            letter-spacing: 0.05em;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f3f4f6 !important;
+        }
+        .table-privia tbody tr {
+            border-bottom: 1px solid #f9fafb;
+            transition: background-color 0.2s ease;
+        }
+        .table-privia tbody tr:hover {
+            background-color: rgba(244, 114, 182, 0.03); /* Hover dòng đổi sang màu hồng cực nhẹ */
+        }
+        .table-privia tbody td {
+            padding-top: 18px;
+            padding-bottom: 18px;
+            font-size: 0.875rem;
+        }
+
+        /* Nút thao tác Sửa / Xóa mảnh dẻ */
+        .btn-action-privia {
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.15s ease;
+            background: #ffffff;
+        }
+        .btn-edit-privia { 
+            color: #2563eb; 
+            border: 1px solid #dbeafe; 
+        }
+        .btn-edit-privia:hover { 
+            background: #2563eb; 
+            color: #ffffff; 
+            border-color: #2563eb; 
+        }
+        .btn-delete-privia {
+            color: #ef4444;
+            border: 1px solid #fee2e2;
+        }
+        .btn-delete-privia:hover {
+            background: #ef4444;
+            color: #ffffff;
+            border-color: #ef4444;
+        }
+
+        /* Xử lý giới hạn dòng, chống tràn/vỡ layout */
+        .truncate-col {
+            max-width: 250px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Hiển thị tối đa 2 dòng */
+            line-clamp: 2;   
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #6b7280;
+        }
+        
+        @media (min-width: 576px) {
+            #searchNews {
+                max-width: 240px !important;
+            }
+        }
+
+/* ----------------------------------------------------MODAL------------------------------------------*/
+ /* Xử lý lớp nền mờ tương thích với cấu trúc JS cũ */
+    .custom-modal-backdrop {
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        z-index: 1060;
+    }
+    
+    /* Trạng thái ẩn mặc định */
+    .custom-modal-backdrop.hidden {
+        display: none !important;
+        opacity: 0;
+    }
+    
+    /* Hiệu ứng zoom nhẹ khi mở hộp thoại */
+    .custom-modal-box {
+        transform: scale(0.95);
+        transition: transform 0.2s ease-out;
+    }
+    .custom-modal-backdrop:not(.hidden) .custom-modal-box {
+        transform: scale(1);
+    }
+
+    /* Chữ tiêu đề dạng Gradient Hồng ngọt ngào quý phái */
+    .gradient-text-privia {
+        background: linear-gradient(to right, #f472b6, #db2777);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* Padding tùy chỉnh mượt cho input */
+    .py-2-5 {
+        padding-top: 0.625rem;
+        padding-bottom: 0.625rem;
+    }
+
+    /* Nút lưu bài viết chuẩn tone Hồng đồng bộ trang danh sách */
+    .btn-gradient-privia {
+        background: linear-gradient(135deg, #f472b6 0%, #db2777 100%) !important;
+        color: #ffffff !important;
+        border: none !important;
+        transition: all 0.2s ease;
+    }
+    .btn-gradient-privia:hover {
+        opacity: 0.95;
+        box-shadow: 0 4px 12px rgba(244, 114, 182, 0.3);
+    }
+
+    /* Hiệu ứng focus input viền màu hồng nhạt tinh tế */
+    .input-privia:focus {
+        border-color: #f472b6;
+        box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.15);
+    }
+    
+    /* Placeholder tinh gọn */
+    .input-privia::placeholder {
+        color: #9ca3af;
+        font-size: 0.9rem;
+    }
+    
+    /* Khoảng cách gap dòng */
+    .gap-3-5 {
+        gap: 0.875rem;
+    }
+    /* CKEDITOR */
+    .ck-editor__editable_inline.ck-focused {
+    border-color: #f472b6 !important;
+}
+    .ck-editor__editable_inline {
+        min-height: 250px;
+        max-height: 450px;
+    }

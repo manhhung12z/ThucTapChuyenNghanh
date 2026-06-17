@@ -1,0 +1,6 @@
+.order_detail_right .order_item{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    align-items: center;
+}

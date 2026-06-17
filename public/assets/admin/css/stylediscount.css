@@ -1,0 +1,179 @@
+
+ /* Card & Shadow mượt như ảnh */
+        .privia-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: none !important;
+        }
+
+        /* Button Thêm mới chuẩn Gradient Vàng Hổ Phách (Amber) */
+        .btn-gradient-privia {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff !important;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 0.925rem;
+            transition: all 0.2s ease;
+        }
+        .btn-gradient-privia:hover {
+            opacity: 0.95;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Thanh tìm kiếm tinh tế */
+        .search-privia {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 8px 16px;
+            font-size: 0.875rem;
+            color: #4b5563;
+        }
+        .search-privia::placeholder {
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+        .search-privia:focus {
+            border-color: #f59e0b;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+        }
+
+        /* Định hình lại cấu trúc Bảng */
+        .table-privia thead th {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #9ca3af !important;
+            letter-spacing: 0.05em;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f3f4f6 !important;
+        }
+        .table-privia tbody tr {
+            border-bottom: 1px solid #f9fafb;
+            transition: background-color 0.2s ease;
+        }
+        .table-privia tbody tr:hover {
+            background-color: #fafafa;
+        }
+        .table-privia tbody td {
+            padding-top: 18px;
+            padding-bottom: 18px;
+            font-size: 0.875rem;
+        }
+
+        /* Nút Sửa / Xóa mảnh dẻ chuẩn ảnh */
+        .btn-action-privia {
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.15s ease;
+            background: #ffffff;
+        }
+        .btn-edit-privia {
+            color: #2563eb;
+            border: 1px solid #dbeafe;
+        }
+        .btn-edit-privia:hover {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+        }
+        .btn-delete-privia {
+            color: #ef4444;
+            border: 1px solid #fee2e2;
+        }
+        .btn-delete-privia:hover {
+            background: #ef4444;
+            color: #ffffff;
+            border-color: #ef4444;
+        }
+
+        /* Giới hạn độ dài để tránh vỡ cột */
+        .desc-col {
+            max-width: 280px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #6b7280;
+        }
+        
+        @media (min-width: 576px) {
+            #searchDiscount {
+                max-width: 240px !important;
+            }
+        }
+
+
+/* ----------------------------------------------------MODAL------------------------------------------*/
+   /* Nền mờ phía sau tương thích mượt với file JS điều khiển cũ */
+    .custom-modal-backdrop {
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        z-index: 1060;
+    }
+    
+    /* Trạng thái ẩn mặc định bằng class .hidden */
+    .custom-modal-backdrop.hidden {
+        display: none !important;
+        opacity: 0;
+    }
+    
+    /* Hiệu ứng scale popup mượt mà khi mở */
+    .custom-modal-box {
+        transform: scale(0.95);
+        transition: transform 0.2s ease-out;
+    }
+    .custom-modal-backdrop:not(.hidden) .custom-modal-box {
+        transform: scale(1);
+    }
+
+    /* Tiêu đề dạng chữ Gradient Vàng Amber phong cách quý phái */
+    .gradient-text-privia {
+        background: linear-gradient(to right, #f59e0b, #d97706);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* Chiều cao đệm của các ô nhập liệu */
+    .py-2-5 {
+        padding-top: 0.625rem;
+        padding-bottom: 0.625rem;
+    }
+
+    /* Nút Submit chuẩn Gradient Amber đồng bộ tuyệt đối */
+    .btn-gradient-privia {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+        color: #ffffff !important;
+        border: none !important;
+        transition: all 0.2s ease;
+    }
+    .btn-gradient-privia:hover {
+        opacity: 0.95;
+        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    }
+
+    /* Đường viền phát sáng khi người dùng click vào input */
+    .input-privia:focus {
+        border-color: #f59e0b;
+        box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
+    }
+    
+    /* Làm nhạt màu chữ placeholder */
+    .input-privia::placeholder {
+        color: #9ca3af;
+        font-size: 0.9rem;
+    }
+    
+    /* Khoảng cách gap định danh */
+    .gap-3-5 {
+        gap: 0.875rem;
+    }
+    
+    .cursor-pointer {
+        cursor: pointer;
+    }

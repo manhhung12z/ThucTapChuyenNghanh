@@ -1,0 +1,128 @@
+ const GHN_TOKEN = "8dad4f14-5c4c-11f1-8581-2e18172ecb31"; 
+
+// Lấy danh sách Tỉnh/Thành từ GHN
+fetch("https://online-gateway.ghn.vn/shiip/public-api/master-data/province", {
+    method: "GET",
+    headers: {
+        "Content-Type": "application/json",
+        "Token": GHN_TOKEN
+    }
+})
+.then(response => {
+    if (!response.ok) throw new Error("Không thể lấy danh sách tỉnh thành");
+    return response.json();
+})
+.then(res => {
+    if (res.code === 200 && res.data) {
+        res.data.forEach(province => {
+            $('#provinces').append(
+                `<option value="${province.ProvinceID}">${province.ProvinceName}</option>`
+            );
+        });
+    }
+})
+.catch(error => console.error('Lỗi tải tỉnh thành GHN:', error));
+
+// Sự kiện khi chọn Tỉnh/Thành phố -> Gọi API lấy Quận/Huyện
+$('#provinces').change(function() {
+    const provinceId = $(this).val();
+    // Reset các ô chọn cấp dưới
+    $('#district').html('<option value="">Chọn Quận / Huyện</option>');
+    $('#ward').html('<option value="">Chọn Phường / Xã</option>');
+
+    if (!provinceId) {
+        $('#district').prop('disabled', true);
+        $('#ward').prop('disabled', true);
+        return;
+    }
+
+    $('#district').prop('disabled', false);
+    $('#ward').prop('disabled', true);
+
+    // Gọi API GHN lấy Quận Huyện theo ProvinceID
+    fetch("https://online-gateway.ghn.vn/shiip/public-api/master-data/district", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Token": GHN_TOKEN
+        },
+        body: JSON.stringify({ province_id: parseInt(provinceId) })
+    })
+    .then(response => response.json())
+    .then(res => {
+        if (res.code === 200 && res.data) {
+            res.data.forEach(district => {
+                $('#district').append(
+                    `<option value="${district.DistrictID}">${district.DistrictName}</option>`
+                );
+            });
+        }
+    })
+    .catch(error => console.error('Lỗi tải quận huyện GHN:', error));
+});
+
+// Gọi API lấy Phường/Xã
+$('#district').change(function() {
+    const districtId = $(this).val();
+    
+    // Reset ô chọn phường xã
+    $('#ward').html('<option value="">Chọn Phường / Xã</option>');
+
+    if (!districtId) {
+        $('#ward').prop('disabled', true);
+        return;
+    }
+    $('#ward').prop('disabled', false);
+
+    // Gọi API GHN lấy Phường Xã theo DistrictID
+    fetch("https://online-gateway.ghn.vn/shiip/public-api/master-data/ward", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Token": GHN_TOKEN
+        },
+        body: JSON.stringify({ district_id: parseInt(districtId) })
+    })
+    .then(response => response.json())
+    .then(res => {
+        if (res.code === 200 && res.data) {
+            res.data.forEach(ward => {
+                //  GHN dùng thuộc tính WardCode varchar thay vì int
+                $('#ward').append(
+                    `<option value="${ward.WardCode}">${ward.WardName}</option>`
+                );
+            });
+        }
+    })
+    .catch(error => console.error('Lỗi tải phường xã GHN:', error));
+});
+
+//  Gom chuỗi địa chỉ 
+// Giả sử id của form đặt hàng là #form-checkout, và ô nhập số nhà là #txt_diachicuthe
+$('#form-checkout').submit(function(e) {
+    const soNha = $('#txt_diachicuthe').val().trim().replace(/,/g, ' '); // Loại bỏ dấu phẩy
+    const province = $('#provinces').val();
+    const district = $('#district').val();
+    const ward = $('#ward').val();
+
+    const finalAddress = `${soNha}, ${ward}, ${district}, ${province}`;
+
+    // Đút chuỗi này vào ô input ẩn name="DiaChiGiao" để gửi lên PHP xử lý
+    $('#hdn_DiaChiGiao').val(finalAddress);
+});
+</script>
+<?php if (Flash::has('error_sl')) { ?>
+    <script>
+        Swal.fire({
+            toast: true,
+            position: 'top-end',
+            icon: 'error',
+            title: <?php echo json_encode(Flash::get('error_sl')); ?>,
+            showConfirmButton: false,
+            timer: 3000, /* Đổi thành 3000 để hiển thị 3 giây cho khách dễ đọc */
+            timerProgressBar: true
+        });
+    </script>
+<?php } ?>
+<?php endblock() ?>
+<?php endblock() ?>

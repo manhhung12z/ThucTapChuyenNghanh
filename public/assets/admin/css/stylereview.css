@@ -1,0 +1,77 @@
+
+
+        /* Card & Shadow mượt đồng bộ hệ thống */
+        .privia-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: none !important;
+        }
+
+        /* Thanh tìm kiếm tinh tế chuẩn Xanh biển nhạt (Sky Blue) */
+        .search-privia {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 8px 16px;
+            font-size: 0.875rem;
+            color: #4b5563;
+        }
+        .search-privia::placeholder {
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+        .search-privia:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+        }
+
+        /* Định hình cấu trúc Bảng Đánh giá */
+        .table-privia thead th {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #9ca3af !important;
+            letter-spacing: 0.05em;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f3f4f6 !important;
+        }
+        .table-privia tbody tr {
+            border-bottom: 1px solid #f9fafb;
+            transition: background-color 0.2s ease;
+        }
+        .table-privia tbody tr:hover {
+            background-color: rgba(56, 189, 248, 0.04); /* Hover dòng đổi sang màu xanh biển nhạt cực dịu */
+        }
+        .table-privia tbody td {
+            padding-top: 18px;
+            padding-bottom: 18px;
+            font-size: 0.875rem;
+        }
+
+        /* Nút thao tác Sửa / Xóa mảnh dẻ */
+        .btn-action-privia {
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.15s ease;
+            background: #ffffff;
+        }
+        .btn-delete-privia {
+            color: #ef4444;
+            border: 1px solid #fee2e2;
+        }
+        .btn-delete-privia:hover {
+            background: #ef4444;
+            color: #ffffff;
+            border-color: #ef4444;
+        }
+
+        /* Xử lý độ dài text chống tràn layout */
+        .truncate-col {
+            max-width: 220px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+/* ----------------------------------------------------MODAL------------------------------------------*/
